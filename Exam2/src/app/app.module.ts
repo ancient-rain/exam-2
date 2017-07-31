@@ -32,6 +32,10 @@ import { AppComponent } from './app.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PhoneAuthComponent } from './phone-auth/phone-auth.component';
+import { MathComponent } from './math/math.component';
+import { BouncedComponent } from './bounced/bounced.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const MaterialModules = [
   MdAutocompleteModule,
@@ -61,7 +65,11 @@ export const MaterialModules = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PhoneAuthComponent,
+    MathComponent,
+    BouncedComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

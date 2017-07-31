@@ -1,5 +1,21 @@
-<md-toolbar color="primary">
-  Exam 2
-</md-toolbar>
-
-<router-outlet></router-outlet>
+<md-sidenav-container>
+  <md-sidenav #sidenav>
+    <md-toolbar color="primary">
+      Math
+    </md-toolbar>
+    <md-nav-list>
+      <a md-list-item (click)="sidenav.toggle()">Math 6/2</a>
+      <a md-list-item (click)="sidenav.toggle()">Math 7/2</a>
+      <a md-list-item (click)="sidenav.toggle()">Math 15</a>
+      <hr>
+      <a md-list-item (click)="sidenav.toggle();">Home</a>
+    </md-nav-list>
+  </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+    Exam 2
+    </md-toolbar>
+  <router-outlet></router-outlet>
+</md-sidenav-container>
