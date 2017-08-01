@@ -31,11 +31,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { PhoneAuthComponent } from './phone-auth/phone-auth.component';
-import { MathComponent } from './math/math.component';
-import { BouncedComponent } from './bounced/bounced.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PhoneAuthComponent } from './+phone-auth/phone-auth.component';
+import { MathComponent } from './+math/math.component';
+import { BouncedComponent } from './+bounced/bounced.component';
+import { PageNotFoundComponent } from './+page-not-found/page-not-found.component';
+import { MathGuard } from "./math.guard";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 export const MaterialModules = [
   MdAutocompleteModule,
@@ -79,8 +81,9 @@ export const MaterialModules = [
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     BrowserAnimationsModule,
     MaterialModules,
+    FlexLayoutModule,
   ],
-  providers: [],
+  providers: [MathGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
