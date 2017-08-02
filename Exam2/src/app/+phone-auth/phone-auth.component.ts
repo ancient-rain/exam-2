@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
-import { PhoneCaptcha } from "../models/phone-captcha";
-import { AngularFireDatabase } from "angularfire2/database";
-import { AuthService } from "../auth.service";
+import { PhoneCaptcha } from '../models/phone-captcha';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-phone-auth',

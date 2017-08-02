@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MathGuard } from "../math.guard";
+import { MathGuard } from '../math.guard';
 
 @Component({
   selector: 'app-math',
