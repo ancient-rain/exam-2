@@ -14,8 +14,8 @@ export class PhoneAuthComponent implements OnInit {
   phoneCaptcha: PhoneCaptcha;
   sms: any;
 
-  constructor(private db: AngularFireDatabase,
-    private authService: AuthService) {
+  constructor(public db: AngularFireDatabase,
+    public authService: AuthService) {
       this.phoneCaptcha = new PhoneCaptcha();
   }
 
