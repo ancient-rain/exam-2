@@ -1,3 +1,31 @@
-<p>
-  phone-auth works!
-</p>
+<md-card fxLayout="column" fxLayoutAlign="none center">
+  <md-card-content fxLayout="column" fxLayoutAlign="none center" *ngIf="authService.userPhoneNumber;else noUser">
+    <p>Signed in as: {{ authService.userPhoneNumber }}</p>
+    <button color="accent" md-raised-button (click)="authService.signOut()">SignOut</button>
+  </md-card-content>
+  <ng-template #noUser>
+    <md-card-content>
+      No user signed in.
+    </md-card-content>
+  </ng-template>
+</md-card>
+<br>
+<md-card fxLayout="column">
+  <form #phoneForm="ngForm">
+    <md-card-title>
+      Phone number authentication
+    </md-card-title>
+    <md-card-content fxLayout="column" fxLayoutAlign="none end">
+      <md-input-container>
+        <input [(ngModel)]="phoneCaptcha.phoneNumber" value="+1" mdInput required type="text" placeholder="Phone number (example) +12345678910"
+          name="phoneNumber">
+      </md-input-container>
+      <div id="recaptcha-container"></div>
+      <button (click)="sendSMS()" md-raised-button color="primary">Send Code</button>
+      <md-input-container>
+        <input [(ngModel)]="phoneCaptcha.captcha" mdInput required type="text" placeholder="Confirmation Code" name="confirmation">
+      </md-input-container>
+      <button [disabled]="!phoneForm.form.valid" (click)="signIn()" md-raised-button color="accent">Sign In</button>
+    </md-card-content>
+  </form>
+</md-card>

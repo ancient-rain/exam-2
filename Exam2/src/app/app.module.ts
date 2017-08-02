@@ -38,6 +38,8 @@ import { BouncedComponent } from './+bounced/bounced.component';
 import { PageNotFoundComponent } from './+page-not-found/page-not-found.component';
 import { MathGuard } from "./math.guard";
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from "./auth.service";
 
 export const MaterialModules = [
   MdAutocompleteModule,
@@ -82,8 +84,12 @@ export const MaterialModules = [
     BrowserAnimationsModule,
     MaterialModules,
     FlexLayoutModule,
+    FormsModule,
   ],
-  providers: [MathGuard],
+  providers: [
+    MathGuard,
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
